@@ -1,3 +1,5 @@
+// i know this is not optimal but I don't know hash tables yet
+
 var canConstruct = function(ransomNote, magazine) {
     let ransomArr = ransomNote.split('');
     let magArr = magazine.split('');
