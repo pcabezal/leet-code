@@ -1,41 +1,19 @@
-function isValid(s) {
-    // regex would be ideal
-    // establish stacks for each paren type
-    let stack = [];
-     
-    // iterate through s and add to stacks accordingly
-    // return false if premature end paren
-    for (let char of s) {
-        switch(char) {
-            case '(':
-                stack.push(char);
-                break;
-            case '[':
-                stack.push(char);
-                break;
-            case '{':
-                stack.push(char);
-                break;
-            case ')':
-                if (stack.pop() == '(') {
-                    break;
-                } else {
-                    return false;
-                }
-            case ']':
-                if (stack.pop() == '[') {
-                    break;
-                } else {
-                    return false;
-                }
-            case '}':
-                if (stack.pop() == '{') {
-                    break;
-                } else {
-                    return false;
-                }
-        }   
-    }
-    // return true if stacks are all empty
-    return stack.length == 0 
+var pivotIndex = function(nums) {
+
+  let totalsum = nums.reduce((p,c) => p + c, 0);
+  let leftsum = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+      totalsum -= nums[i]
+
+      if (totalsum == leftsum) return i
+
+      leftsum += nums[i];
   }
+
+  return -1;
+};
+
+console.log(pivotIndex([1,7,3,6,5,6]));
+// console.log(pivotIndex([1,2,3]));
+// console.log(pivotIndex([2,1,-1]));
