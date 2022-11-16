@@ -2,7 +2,6 @@ var reverseString = function(s) {
   let end = s.length
   let middle = end%2 == 0 ? end / 2 : end / 2 - .5
 
-  console.log(middle);
   for (let i = 0, j = end - 1; i < middle; i++, j--) {
     let first = s[i]
     let last = s[j]
