@@ -12,5 +12,12 @@ var reverseString = function(s) {
   return s
 };
 
+// better?
+var reverseString = (s) => {
+    for (let [a, b] = [0, s.length - 1]; a < b; a++, b--) {
+        [s[a], s[b]] = [s[b], s[a]]
+    }
+};
+
 console.log(reverseString(["h","e","l","l","o"]));
 console.log(reverseString(["h","e","l","l","o","!"]));
