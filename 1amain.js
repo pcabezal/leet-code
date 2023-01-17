@@ -17,7 +17,7 @@ console.log(map);
   console.log('map ' + map)
   console.log('answer' + answer)
 
-  return Array.from(answer)
+  return Array.from(answer) 
 };
 
 console.log(intersection([1,2,2,1], [2,2]));
