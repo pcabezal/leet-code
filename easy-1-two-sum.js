@@ -11,3 +11,18 @@ var twoSum = function(nums, target) {
 
   return []
 };
+
+// 2.0
+
+var twoSum = function(nums, target) {
+  // make map object
+  const map = {}
+  
+  // iterate through nums, adding values and indeces to object and checking if existing values can sum to target
+  for (ind in nums) {
+      let remainder = target - nums[ind]
+      if (map[remainder]) return [map[remainder], ind]
+      map[nums[ind]] = ind
+  }
+  
+};
