@@ -1,21 +1,18 @@
-var lengthOfLongestSubstring = function(s) {
-  let arr = s.split('')
-  let longest = 0
-  let map = new Map();
-  for (let i = 0; i < arr.length; i++) {
-    let j = i
-    let long = 0
-    while (arr[j] && !map.has(arr[j]))  {
-      map.set(arr[j], true)
-      j++
-      long++
-      if (long > longest) longest = long
-    }
-    long = 0
-    map.clear()
-  }
-  return longest
-};
+function findOutlier(integers){
+  let odd = 0;
+  let even = 0;
 
-console.log(lengthOfLongestSubstring("abcabcbb"));
-console.log(lengthOfLongestSubstring("bbbbb"));
+  for (let i = 0; i < 3; i++) {
+    if (integers[i] % 2 == 0) {
+      even++
+    } else {
+      odd++
+    }
+  }
+
+  if (even > odd) {
+    return integers.filter((num) => num % 2 !== 0)[0]
+  } else {
+    return integers.filter((num) => num % 2 == 0)[0]
+  }
+}
